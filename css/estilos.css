@@ -1,0 +1,7 @@
+#juego{
+	width: 1920px;
+	margin: auto;
+}
+#juego > img{
+	width: 80%;
+}
