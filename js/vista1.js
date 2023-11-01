@@ -19,6 +19,11 @@ export class Vista1{
 
 const texto1 = `
 	Tatooine, un planeta desértico circunvolucional escasamente poblado. Muy escasamente poblado... Y es tu casa.<br /><br />
-	Trabajas como granjero de humedad, recuperando agua de la atmósfera para vendérsela a los pocos cultivadores de dátiles duros del planeta. Igual que hicieron tu padre y tu abuelo antes que tú.<br /><br />
+	Trabajas como granjero de humedad, recuperando agua de la atmósfera para vendérsela a los pocos cultivadores de dátiles negros del planeta. Igual que hicieron tu padre y tu abuelo antes que tú.<br /><br />
 	Como dijo un famoso Jedi al llegar a Tatooine: <i>"Si existe un auténtico centro de la galaxia, estás en el planeta más alejado de él"</i>
 `
+const text2 = `Una tarde, tras un intenso día de trabajo, llegas a casa. Pero esta vez hay algo diferente.<br />
+En la puerta te espera un ser alto y delgado, envuelto en una capa turquesa. Parece que no tiene prisa, que lleva toda la vida junto a tu puerta.<br />
+Te acercas y reconoces la insignia que cuelga de su capa. Es un caballero Jedi. Por tu cabeza pasan las historias que tu padre te contaba después de la cena.<br />
+El caballero Jedi te llama por tu nombre, pero sabes que jamás le habías visto antes. Y la propuesta que te hace a continuación es todavía más sorprendente.<br />
+<i>"Estamos buscando seres en los que la fuerza esté muy presente" - te explica - "y hasta Coruscant nos llegó el eco de que alguien aquí en Tatooine posee un don. He venido a buscarte y a proponerte que vengas conmigo para iniciar tu entrenamiento como Jedi"</i>` 
