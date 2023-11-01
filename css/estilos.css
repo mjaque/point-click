@@ -1,7 +1,40 @@
-#juego{
-	width: 1920px;
-	margin: auto;
+i{
+	font-style: italic;
 }
-#juego > img{
-	width: 80%;
+/* Párrafo de avisos */
+div#juego{
+	width: 1900px;
+	height: 1000px;
+}
+div#juego > p{
+	border: 1px solid red;
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	top: 1rem;
+	margin: auto;
+	font-family: sans;
+	color: white;
+	font-size: 2rem;
+	text-align: center;
+}
+/* Área de imagen */
+div#juego > div{
+border:1px solid pink;
+	position: relative;
+	width: 1900px;
+	height: 800px;
+	margin: auto;
+	overflow: hidden;
+}
+div#juego > div > div.zona{
+	position: absolute;
+	border: 1px solid blue;
+	cursor: pointer;
+}
+.presentacion{
+	font-family: arial;
+	color: white;
+	font-size: 2rem;
+	line-height: 2rem;
 }

@@ -1,0 +1,31 @@
+
+export class Vista1{
+	constructor(juego, base){
+		this.juego = juego
+		this.base = base
+
+		this.imgFondo = new Image()
+		this.imgFondo.src = './img/tatooine1.png'
+		this.fondo = this.juego.crearFondo(this.imgFondo)
+		this.zonaDcha = this.juego.crearZona(1430, 400, 100, 100)
+		this.zonaDcha.onmouseover = () =>{
+			juego.avisar('Avanzar a la derecha')
+		}
+		this.zonaDcha.onmouseout = () =>{
+			juego.ocultarAviso()
+		}
+		this.zonaDcha.onclick = () =>{
+			juego.irAVista2()
+		}
+	}
+	play(){
+		this.base.appendChild(this.fondo)
+		this.base.appendChild(this.zonaDcha)
+	}
+}
+
+const texto1 = `
+	Tatooine, un planeta desértico circunvolucional escasamente poblado. Muy escasamente poblado. Y es tu casa.
+	Trabajas como granjero de humedad, recuperando agua de la atmósfera para vendérsela a los pocos cultivadores de dátiles duros del planeta. Igual que hicieron tu padre y tu abuelo antes que tú.
+	Como dijo un famoso Jedi al llegar a Tatooine: "Si existe un auténtico centro de la galaxia, estás en el planeta más alejado de él"
+`

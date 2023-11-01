@@ -1,13 +1,14 @@
 
-export class Vista1{
-	constructor(base){
+export class Vista2{
+	constructor(juego, base){
+		this.juego = juego
 		this.base = base
-		this.imagen = new Image()
-		this.imagen.src = './img/tatooine2.png'
+
+		this.imgFondo = new Image()
+		this.imgFondo.src = './img/tatooine2.png'
+		this.fondo = this.juego.crearFondo(this.imgFondo)
 	}
 	play(){
-		const img = document.createElement('img')
-		this.base.appendChild(img)
-		img.src = this.imagen.src
+		this.base.appendChild(this.fondo)
 	}
 }
