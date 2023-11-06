@@ -1,0 +1,43 @@
+@font-face{
+	font-family: starjedi;
+  src: url(starjedi.ttf);
+}
+body{
+	margin: 3rem;
+	font-family: sans;
+	background-image: url('../img/fondo_jedi.png');
+	background-repeat: no-repeat;
+}
+h1{
+	text-align: center;
+	font-family: starjedi;
+	font-size: 4rem;
+	margin-bottom: 1rem;
+	color: white;
+}
+body > div {
+	display: grid;
+	grid-template-columns: 2fr 0.5fr 0.5fr;
+	grid-gap: 1rem;
+	height: 3rem;
+	max-width: 60%;
+	margin: auto;
+	color: white;
+}
+body > div:hover {
+	background-color: rgba(99, 255, 71, 0.5);
+}
+body > div:nth-child(odd){
+
+}
+body > div > div:nth-child(1){
+	font-weight: bold;
+	padding: 1rem 0 0.2rem 0.5rem;
+}
+body > div > div:nth-child(2){
+	text-align: right;
+	padding: 1rem 0 0.2rem 0.5rem;
+}
+body > div > img{
+	height: 2rem;
+}
