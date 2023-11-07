@@ -1,0 +1,28 @@
+{
+	"jedis": [
+		{
+			"nombre": "Jedi 1",
+			"rango": "padawan"
+		},
+		{
+			"nombre": "Jedi 2",
+			"rango": "padawan"
+		},
+		{
+			"nombre": "Jedi 3",
+			"rango": "caballero"
+		},
+		{
+			"nombre": "Jedi 4",
+			"rango": "maestro"
+		},
+		{
+			"nombre": "Jedi 5",
+			"rango": "maestro"
+		},
+		{
+			"nombre": "Jedi 6",
+			"rango": "leyenda"
+		}
+	]
+}
