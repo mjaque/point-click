@@ -21,7 +21,6 @@ export class Vista4{
 		this.zona3 = this.juego.crearZona(1800, 400, 50, 50)
 		this.zona3.textContent = '>'
 		this.zona3.classList.add('movimiento')
-		this.zona3.style.border = '1px solid red'
 	}
 	play(){
 		this.base.appendChild(this.fondo)
