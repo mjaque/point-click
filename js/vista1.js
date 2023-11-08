@@ -7,13 +7,29 @@ export class Vista1{
 		this.imgFondo = new Image()
 		this.imgFondo.src = './img/tatooine1.png'
 		this.fondo = this.juego.crearFondo(this.imgFondo)
-		this.texto1 = this.juego.crearZona(500, 200, 900, 300)
-		this.texto1.classList.add('presentacion')
+		this.zonaTexto1 = this.juego.crearZona(500, 200, 900, 300)
+		this.zonaTexto1.classList.add('presentacion')
+		this.zonaSeguir = this.juego.crearZona(700, 600, 500, 200)
+		this.zonaSeguir.classList.add('presentacion')
 	}
 	play(){
 		this.base.appendChild(this.fondo)
-		this.base.appendChild(this.texto1)
-		this.texto1.innerHTML = texto1
+		this.base.appendChild(this.zonaTexto1)
+		this.zonaTexto1.innerHTML = texto1
+		this.zonaTexto1.style.opacity = 0
+		setTimeout(()=>{this.zonaTexto1.style.opacity = 1}, 500)
+		setTimeout(this.seguir.bind(this), 10000)
+	}
+	seguir(){
+		this.base.appendChild(this.zonaSeguir)
+		this.zonaSeguir.innerHTML = '(Pulsa ENTER para continuar)'
+		window.onkeydown = (evento) => {
+			this.zonaTexto1.style.opacity = 1
+			if (evento.code === 'Enter'){
+				window.onkeydown = null
+				this.juego.irAVista2()
+			}
+		}
 	}
 }
 

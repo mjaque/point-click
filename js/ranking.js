@@ -7,10 +7,10 @@ class Ranking{
 	}
 	crearMapaInsignias(){
 		this.insignias = new Map()
-		this.insignias.set( 'padawan', 'insignia1.png')
-		this.insignias.set( 'caballero', 'insignia1.png')
-		this.insignias.set( 'maestro', 'insignia1.png')
-		this.insignias.set( 'leyenda', 'insignia1.png')
+		this.insignias.set( 'padawan', 'padawan.png')
+		this.insignias.set( 'caballero', 'knight.png')
+		this.insignias.set( 'maestro', 'master.png')
+		this.insignias.set( 'leyenda', 'legend.png')
 		//Otros rangos posibles: centinela, gran maestro, cónsul
 	}
 	iniciar(){

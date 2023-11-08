@@ -6,21 +6,8 @@ div#juego{
 	width: 1900px;
 	height: 1000px;
 }
-div#juego > p{
-	border: 1px solid red;
-	position: absolute;
-	z-index: 10;
-	width: 100%;
-	top: 1rem;
-	margin: auto;
-	font-family: sans;
-	color: white;
-	font-size: 2rem;
-	text-align: center;
-}
 /* Área de imagen */
 div#juego > div{
-border:1px solid pink;
 	position: relative;
 	width: 1900px;
 	height: 800px;
@@ -29,12 +16,29 @@ border:1px solid pink;
 }
 div#juego > div > div.zona{
 	position: absolute;
-	border: 1px solid blue;
 	cursor: pointer;
 }
 .presentacion{
-	font-family: arial;
+	font-family: sans;
 	color: white;
 	font-size: 2rem;
 	line-height: 2rem;
+	transition: opacity 5s linear;
+}
+.centrado{
+	text-align: center;
+}
+.fondoTexto{
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: grey;
+	opacity: 0.5;
+}
+.movimiento{
+	color: white;
+	font-size: 5rem;
+	opacity: 0;
+}
+.movimiento:hover{
+	opacity: 1;
 }
