@@ -11,6 +11,7 @@ class Juego{
 	constructor(divJuego){
 		this.divJuego = divJuego
 		this.base = this.divJuego.querySelectorAll('div')[0]
+		this.divInventario = this.divJuego.querySelectorAll('div')[1]
 		this.modelo = new Map()
 		this.vista1 = new Vista1(this, this.base)	//Intro 1 - Tatooine
 		this.vista2 = new Vista2(this, this.base)	//Intro 2 - Tatooine - Reclutamiento
@@ -20,10 +21,42 @@ class Juego{
 		this.vista6 = new Vista6(this, this.base) //Biblioteca - Pasillo 2
 		this.vista7 = new Vista7(this, this.base) //Biblioteca - Pasillo 3
 
-		this.vista4.play()
+		this.vista7.play()
 	}
 	guardar(clave, obj){
 		this.modelo.set(clave, obj)
+		this.actualizarInventario()
+	}
+	actualizarInventario(){
+		while (this.divInventario.firstElementChild)
+			this.divInventario.firstElementChild.remove()
+		for(let entrada of this.modelo)
+			switch (entrada[0]){
+				case 'libro':
+					const img = document.createElement('img')
+					this.divInventario.appendChild(img)
+					img.src = './img/libro.png'
+					img.classList.add('inventario')
+					img.setAttribute('title', 'Libro de Teoría de Sistemas Operativos, con varias páginas arrancadas.')
+					img.onclick = () => {window.open('./docs/teo_sis_op.odt', '_blank')}
+					break
+				case 'definicion':
+					const img1 = document.createElement('img')
+					this.divInventario.appendChild(img1)
+					img1.src = './img/doc1.png'
+					img1.classList.add('inventario')
+					img1.setAttribute('title', 'Un antiguo documento sobre la definición de los Sistemas Operativos, que lleva el sello de los Jedi.')
+					img1.onclick = () => {window.open('./docs/definicion.pdf', '_blank')}
+					break
+				case 'caracteristicas':
+					const img2 = document.createElement('img')
+					this.divInventario.appendChild(img2)
+					img2.src = './img/doc2.png'
+					img2.classList.add('inventario')
+					img2.setAttribute('title', 'Parece un escrito sobre Características de los Sistemas Operativos... interesante.')
+					img2.onclick = () => {window.open('./docs/caracteristicas.pdf', '_blank')}
+					break
+			}
 	}
 	ver(clave){
 		return this.modelo.get(clave)

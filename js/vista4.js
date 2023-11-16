@@ -39,7 +39,7 @@ export class Vista4{
 		this.zonaSeguir.innerHTML = '(Pulsa ENTER para continuar)'
 		window.onkeydown = (evento) => {
 			this.juego.guardar('Vista4.texto.visto', true)
-			this.juego.guardar('libro', './docs/teo_sis_op.odt')
+			this.juego.guardar('libro', true)
 			if (evento.code === 'Enter'){
 				window.onkeydown = null
 				this.zonaTexto1.remove()
