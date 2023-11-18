@@ -16,7 +16,6 @@ div#juego > div{
 }
 div#juego > div > div.zona{
 	position: absolute;
-	cursor: pointer;
 }
 .presentacion{
 	font-family: sans;
@@ -34,6 +33,7 @@ div#juego > div > div.zona{
 	font-size: 1rem;
 	line-height: 2rem;
 	font-style: italic;
+	cursor: default;
 }
 .fondoTexto{
 	padding: 1rem;
@@ -45,6 +45,7 @@ div#juego > div > div.zona{
 	color: white;
 	font-size: 5rem;
 	opacity: 0;
+	cursor: pointer;
 }
 .movimiento:hover{
 	opacity: 1;

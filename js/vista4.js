@@ -21,6 +21,11 @@ export class Vista4{
 		this.zona3 = this.juego.crearZona(1800, 400, 50, 50)
 		this.zona3.textContent = '>'
 		this.zona3.classList.add('movimiento')
+		this.zona4 = this.juego.crearZona(360, 530, 50, 15)
+		this.zona4.style.cursor = 'pointer'
+		this.zonaTexto2 = this.juego.crearZona(300, 350, 300, 100)
+		this.zonaTexto2.classList.add('texto')
+		this.zonaTexto2.style.opacity = 1
 	}
 	play(){
 		this.base.appendChild(this.fondo)
@@ -55,6 +60,15 @@ export class Vista4{
 		this.zona2.onclick = this.pulsarZona2.bind(this)
 		this.base.appendChild(this.zona3)
 		this.zona3.onclick = this.pulsarZona3.bind(this)
+		this.base.appendChild(this.zona4)
+		this.zona4.onclick = this.pulsarZona4.bind(this)
+		this.zona4.onmouseover = () => {
+			this.zonaTexto2.textContent = '¿Seguro que quieres operar con el terminal? Te la estás jugando'
+		}
+		this.zona4.onmouseout = () => {
+			this.zonaTexto2.textContent = ''
+		}
+		this.base.appendChild(this.zonaTexto2)
 	}
 	pulsarZona1(){
 		this.juego.irAVista5()
@@ -64,6 +78,16 @@ export class Vista4{
 	}
 	pulsarZona3(){
 		this.juego.irAVista7()
+	}
+	pulsarZona4(){
+		if (prompt("00110100 00110010\nIntroduzca la clave de acceso: ") === "42"){
+			this.zonaTexto2.textContent = 'Te cuelas en el ordenador central y encuentras un documento interesante.'
+			this.juego.guardar('tabla', true)
+			this.zona4.remove()
+		}
+		else{
+			alert('¡BEEP! ¡BEEP! ¡BEEP!')
+		}
 	}
 }
 const texto = `Hoy empiezas tu formación de Jedi. Y no va a ser fácil.<br /><br />

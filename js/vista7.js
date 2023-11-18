@@ -11,10 +11,8 @@ export class Vista7{
 		this.zona1.textContent = '<'
 		this.zona1.classList.add('movimiento')
 		this.zona2 = this.juego.crearZona(1720, 540, 40, 130)
-		this.zona2.style.backgroundColor = 'red'
 		this.zona2.style.cursor = 'pointer'
 		this.zona3 = this.juego.crearZona(1700, 375, 40, 35)
-		this.zona3.style.backgroundColor = 'blue'
 		this.zona3.style.cursor = 'default'
 		this.zonaTexto1 = this.juego.crearZona(1400, 500, 200, 200)
 		this.zonaTexto1.classList.add('texto')

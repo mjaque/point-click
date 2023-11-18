@@ -21,7 +21,7 @@ class Juego{
 		this.vista6 = new Vista6(this, this.base) //Biblioteca - Pasillo 2
 		this.vista7 = new Vista7(this, this.base) //Biblioteca - Pasillo 3
 
-		this.vista7.play()
+		this.vista1.play()
 	}
 	guardar(clave, obj){
 		this.modelo.set(clave, obj)
@@ -33,30 +33,41 @@ class Juego{
 		for(let entrada of this.modelo)
 			switch (entrada[0]){
 				case 'libro':
-					const img = document.createElement('img')
-					this.divInventario.appendChild(img)
-					img.src = './img/libro.png'
-					img.classList.add('inventario')
-					img.setAttribute('title', 'Libro de Teoría de Sistemas Operativos, con varias páginas arrancadas.')
-					img.onclick = () => {window.open('./docs/teo_sis_op.odt', '_blank')}
+					this.crearElementoInventario('libro.png', 'Libro de Teoría de Sistemas Operativos, con varias páginas arrancadas.', 'teo_sis_op.odt')
 					break
 				case 'definicion':
-					const img1 = document.createElement('img')
-					this.divInventario.appendChild(img1)
-					img1.src = './img/doc1.png'
-					img1.classList.add('inventario')
-					img1.setAttribute('title', 'Un antiguo documento sobre la definición de los Sistemas Operativos, que lleva el sello de los Jedi.')
-					img1.onclick = () => {window.open('./docs/definicion.pdf', '_blank')}
+					this.crearElementoInventario('doc1.png','Un antiguo documento sobre la definición de los Sistemas Operativos, que lleva el sello de los Jedi.', 'definicion.pdf')
 					break
 				case 'caracteristicas':
-					const img2 = document.createElement('img')
-					this.divInventario.appendChild(img2)
-					img2.src = './img/doc2.png'
-					img2.classList.add('inventario')
-					img2.setAttribute('title', 'Parece un escrito sobre Características de los Sistemas Operativos... interesante.')
-					img2.onclick = () => {window.open('./docs/caracteristicas.pdf', '_blank')}
+					this.crearElementoInventario('doc2.png', 'Parece un escrito sobre Características de los Sistemas Operativos... interesante.', 'caracteristicas.pdf')
+					break
+				case 'arquitectura':
+					this.crearElementoInventario('doc3.png', 'Son apuntes Klingon sobre Arquitectura de Sistemas Operativos... ¿qué hace esto aquí?', 'arquitectura.pdf')
+					break
+				case 'funciones':
+					this.crearElementoInventario('disk1.png', 'Un formato muy antiguo que casi nadie recuerda como leer, pero describe la funciones de los Sistemas Operativos.', 'funciones.pdf')
+					break
+				case 'tabla':
+					this.crearElementoInventario('disk2.png', '¡Una tabla de Sistemas Operativos! Esto te va a ahorrar un montón de trabajo', 'tabla.pdf')
 					break
 			}
+			//Comprobamos si hemos completado el juego
+			if (
+				this.modelo.get('libro') &&
+				this.modelo.get('definicion') &&
+				this.modelo.get('caracteristicas') &&
+				this.modelo.get('arquitectura') &&
+				this.modelo.get('funciones') &&
+				this.modelo.get('tabla'))
+				setTimeout( () => {window.location.href = 'fin.html'}, 10000)
+	}
+	crearElementoInventario(src, title, doc){
+			const img = document.createElement('img')
+			this.divInventario.appendChild(img)
+			img.src = './img/' + src
+			img.classList.add('inventario')
+			img.setAttribute('title', title)
+			img.onclick = () => {window.open('./docs/' + doc, '_blank')}
 	}
 	ver(clave){
 		return this.modelo.get(clave)
